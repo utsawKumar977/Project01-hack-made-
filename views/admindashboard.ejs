@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine Blood Bank - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admindashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div>
+                <h2>LifeLine</h2>
+                <p>Blood Bank</p>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li class="active">
+                <a href="#"><i class="fa-solid fa-house"></i> Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-users"></i> Manage Donors</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-hospital"></i> Manage Hospitals</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-droplet"></i> Blood Requests</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-box"></i> Blood Inventory</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-file-lines"></i> Reports</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-user"></i> Users</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </li>
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+
+            <div>
+                <span class="network">LIFELINE BLOOD NETWORK</span>
+
+                <h1>Admin Dashboard</h1>
+
+                <p>Welcome back, Admin! Manage the blood network efficiently.</p>
+            </div>
+
+            <div class="profile">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <div class="profile-box">
+                    <i class="fa-solid fa-user"></i>
+
+                    <div>
+                        <h4>Admin</h4>
+                        <span>System Administrator</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Stats -->
+        <section class="stats">
+
+            <div class="card">
+                <div class="icon pink">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <h2>1,250</h2>
+                    <p>Total Donors</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon blue">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+
+                <div>
+                    <h2>24</h2>
+                    <p>Hospitals Connected</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon red">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <div>
+                    <h2>320</h2>
+                    <p>Units in Inventory</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon green">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <div>
+                    <h2>18</h2>
+                    <p>Active Requests</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Chart + Table -->
+        <section class="middle">
+
+            <div class="chart-box">
+
+                <div class="title-row">
+                    <h2>Blood Inventory</h2>
+                    <span>Units</span>
+                </div>
+
+                <div class="chart">
+
+                    <div class="bar" style="height:160px"><span>A+</span></div>
+                    <div class="bar" style="height:65px"><span>A-</span></div>
+                    <div class="bar" style="height:105px"><span>B+</span></div>
+                    <div class="bar" style="height:58px"><span>B-</span></div>
+                    <div class="bar" style="height:95px"><span>AB+</span></div>
+                    <div class="bar" style="height:62px"><span>AB-</span></div>
+                    <div class="bar" style="height:145px"><span>O+</span></div>
+                    <div class="bar" style="height:85px"><span>O-</span></div>
+
+                </div>
+
+            </div>
+
+            <div class="table-box">
+
+                <div class="table-header">
+                    <h2>Recent Blood Requests</h2>
+                    <a href="#">View All</a>
+                </div>
+
+                <table>
+
+                    <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Blood Group</th>
+                        <th>Location</th>
+                        <th>Units</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>Neha Singh</td>
+                        <td>O+</td>
+                        <td>City Hospital</td>
+                        <td>2</td>
+                        <td><span class="urgent">Urgent</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Vikram Patel</td>
+                        <td>B-</td>
+                        <td>Care Hospital</td>
+                        <td>1</td>
+                        <td><span class="progress">In Progress</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Anita Sharma</td>
+                        <td>A+</td>
+                        <td>LifeCare</td>
+                        <td>3</td>
+                        <td><span class="complete">Completed</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Suresh Kumar</td>
+                        <td>AB+</td>
+                        <td>Green Hospital</td>
+                        <td>1</td>
+                        <td><span class="pending">Pending</span></td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Actions -->
+        <section class="actions">
+
+            <div class="action-card donor">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h3>Manage Donors</h3>
+                    <p>View and manage donors</p>
+                </div>
+            </div>
+
+            <div class="action-card hospital">
+                <i class="fa-solid fa-hospital"></i>
+                <div>
+                    <h3>Manage Hospitals</h3>
+                    <p>Add or update hospitals</p>
+                </div>
+            </div>
+
+            <div class="action-card inventory">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <h3>Update Inventory</h3>
+                    <p>Track blood units</p>
+                </div>
+            </div>
+
+            <div class="action-card report">
+                <i class="fa-solid fa-file-lines"></i>
+                <div>
+                    <h3>Generate Reports</h3>
+                    <p>View system reports</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

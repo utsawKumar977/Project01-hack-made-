@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLine | AI Blood Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="drop drop-1">+</div>
+    <div class="drop drop-2">+</div>
+    <div class="drop drop-3">+</div>
+
+    <div class="hero-content">
+
+      <div class="brand">
+        <div class="blood-logo"><span>+</span></div>
+        <div>
+          <h2>LifeLine</h2>
+          <p>Blood Bank</p>
+        </div>
+      </div>
+
+      <div class="network-label">
+        <span></span>
+        AI POWERED BLOOD NETWORK
+      </div>
+
+      <div class="hero-text">
+        <h1>A Drop<br>Can Save<br>A Life</h1>
+        <p>
+          Connecting donors, patients, hospitals and blood banks
+          through one intelligent platform.
+        </p>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="/receiver" class="btn-primary">
+          <i class="fa-solid fa-droplet"></i>
+          I Need Blood
+        </a>
+
+        <button class="btn-outline">
+          Become a Donor
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <h4>Find Donors</h4>
+            <p>Connect with compatible donors</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div>
+            <h4>Request Blood</h4>
+            <p>Find available blood nearby</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div>
+            <h4>Save Lives</h4>
+            <p>Help patients in need</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="heartbeat">
+        <svg viewBox="0 0 900 150" preserveAspectRatio="none">
+          <path d="
+            M0 90 C80 90 100 90 150 90
+            L210 90 L245 40 L280 130 L320 90
+            C370 90 400 90 450 90
+            C500 90 525 90 570 50
+            C600 25 630 25 660 55
+            C690 90 710 115 740 115
+            C770 115 800 90 830 90 L900 90"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <div class="login-wrapper" id="loginSection">
+      <div class="login-card">
+
+        <div class="login-brand">
+          <div class="small-blood-logo">+</div>
+          <div>
+            <strong>LifeLine</strong>
+            <span>Blood Bank</span>
+          </div>
+        </div>
+
+        <h2>Welcome Back</h2>
+        <p class="login-subtitle">Login to your account to continue</p>
+
+        <div class="role-selector">
+          <button class="role-btn active"
+                  id="donorRole"
+                  type="button"
+                  onclick="selectRole('donor',this)">
+            <i class="fa-solid fa-droplet"></i> Donor
+          </button>
+
+          <button class="role-btn"
+                  id="adminRole"
+                  type="button"
+                  onclick="selectRole('admin',this)">
+            <i class="fa-solid fa-shield-halved"></i> Admin
+          </button>
+        </div>
+
+        <form id="loginForm" action="/login" method="POST">
+          <div class="input-box">
+            <i class="fa-regular fa-envelope"></i>
+            
+             <input type="hidden"
+             id="roleInput"
+             name="role"
+             value="donor">
+
+            <input id="username"
+                   type="text"
+                   name="identity"
+                   placeholder="Email address or Mobile number"
+                   required>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input id="password"
+                   type="password"
+                   placeholder="Password"
+                   name="password"
+                   required>
+
+            <button type="button"
+                    class="eye-btn"
+                    onclick="togglePassword()">
+              <i class="fa-regular fa-eye" id="eyeIcon"></i>
+            </button>
+          </div>
+
+          <div class="login-options">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#" >Forgot password?</a>
+          </div>
+
+          <button class="login-btn" type="submit">
+            Login <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <div class="signup">
+          Don't have an account? <a href="signup">Sign Up</a>
+        </div>
+
+        <a href="/receiver" class="receiver-btn">
+          <span><i class="fa-solid fa-droplet"></i></span>
+          <div>
+            <strong>I Need Blood</strong>
+            <small>Continue as Receiver</small>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="security-note">
+          <i class="fa-solid fa-lock"></i>
+          Receivers don't need an account. Your request is securely processed.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script >
+
+   function selectRole(role, button) {
+    document.getElementById("roleInput").value = role;
+
+    document.querySelectorAll(".role-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+    }
+
+function togglePassword() {
+  const password = document.getElementById("password");
+  const eye = document.getElementById("eyeIcon");
+
+  if (!password || !eye) return;
+
+  if (password.type === "password") {
+    password.type = "text";
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
+  } else {
+    password.type = "password";
+    eye.classList.remove("fa-eye-slash");
+    eye.classList.add("fa-eye");
+  }
+}
+
+</script>
+</body>
+</html>

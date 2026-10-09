@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeLine | Blood Request</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left,#9d0016,#5d0008);
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    padding:20px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#dc143c;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.logo-text h2{
+    font-size:28px;
+    color:#222;
+}
+
+.logo-text p{
+    color:#777;
+    font-size:14px;
+}
+
+.title{
+    font-size:38px;
+    color:#222;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+.field label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+.field textarea{
+    resize:none;
+    height:110px;
+}
+
+.full{
+    margin-bottom:15px;
+}
+
+.blood-title{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.blood-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.blood-options input{
+    display:none;
+}
+
+.blood-options label{
+    padding:10px 14px;
+    border:1px solid #f0d1d1;
+    border-radius:10px;
+    background:#fff7f7;
+    color:#9d0016;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.blood-options input:checked + label{
+    background:#dc143c;
+    color:white;
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    background:#dc143c;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.submit-btn:hover{
+    background:#b80d30;
+}
+
+.back{
+    display:inline-block;
+    margin-top:18px;
+    text-decoration:none;
+    color:#9d0016;
+    font-weight:600;
+}
+
+@media(max-width:600px){
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        font-size:30px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="logo">
+<div class="logo-icon">
+<i class="fa-solid fa-droplet"></i>
+</div>
+
+<div class="logo-text">
+<h2>LifeLine</h2>
+<p>Blood Bank</p>
+</div>
+</div>
+
+<h1 class="title">Request Blood</h1>
+
+<p class="subtitle">
+Provide the patient details and required blood group.
+</p>
+
+<form action="/receiver" method="POST">
+
+<div class="row">
+
+<div class="field">
+<label>Patient Name</label>
+<input
+type="text"
+name="patientName"
+placeholder="Enter patient name"
+required>
+</div>
+
+<div class="field">
+<label>Mobile Number</label>
+<input
+type="tel"
+name="phone"
+placeholder="Enter mobile number"
+required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="field">
+<label>Urgency</label>
+
+<select name="urgency">
+<option>Normal</option>
+<option>Urgent</option>
+<option>Critical</option>
+</select>
+</div>
+
+<div class="field">
+<label>Required Units</label>
+<input
+type="number"
+name="units"
+value="1"
+min="1">
+</div>
+
+</div>
+
+<div class="blood-title">
+Blood Group
+</div>
+
+<div class="blood-options">
+
+<input type="radio" id="a+" name="bloodGroup" value="A+" checked>
+<label for="a+">A+</label>
+
+<input type="radio" id="a-" name="bloodGroup" value="A-">
+<label for="a-">A-</label>
+
+<input type="radio" id="b+" name="bloodGroup" value="B+">
+<label for="b+">B+</label>
+
+<input type="radio" id="b-" name="bloodGroup" value="B-">
+<label for="b-">B-</label>
+
+<input type="radio" id="ab+" name="bloodGroup" value="AB+">
+<label for="ab+">AB+</label>
+
+<input type="radio" id="ab-" name="bloodGroup" value="AB-">
+<label for="ab-">AB-</label>
+
+<input type="radio" id="o+" name="bloodGroup" value="O+">
+<label for="o+">O+</label>
+
+<input type="radio" id="o-" name="bloodGroup" value="O-">
+<label for="o-">O-</label>
+
+</div>
+
+<div class="field full">
+<label>Hospital / Location</label>
+<input
+type="text"
+name="location"
+placeholder="Hospital or location"
+required>
+</div>
+
+<div class="field full">
+<label>Additional Information</label>
+
+<textarea
+name="message"
+placeholder="Any additional information"></textarea>
+</div>
+
+<button class="submit-btn" type="submit">
+<i class="fa-solid fa-paper-plane"></i>
+ Submit Blood Request
+</button>
+
+</form>
+
+<a href="/" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+ Back to Login
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

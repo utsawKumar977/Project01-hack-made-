@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLine | Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="blood-logo">+</div>
+      <div>
+        <h2>LifeLine</h2>
+        <span>Blood Bank</span>
+      </div>
+    </div>
+
+    <nav id="sidebarNav"></nav>
+
+    <button class="sidebar-logout" id="logoutBtn">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Logout</span>
+    </button>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+
+      <div>
+        <p class="eyebrow">LIFELINE BLOOD NETWORK</p>
+        <h1 id="pageTitle">Donor Dashboard</h1>
+        <p class="welcome" id="welcomeText"></p>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-dot"></span>
+        </button>
+
+        <div class="profile">
+          <div class="avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div>
+            <strong id="profileName">User</strong>
+            <small id="profileRole">Blood Donor</small>
+          </div>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ================= DONOR ================= -->
+
+    <section id="donorDashboard">
+
+      <div class="stats-grid">
+
+        <article class="stat-card red">
+          <div class="stat-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Total Donations</span>
+          </div>
+        </article>
+
+        <article class="stat-card green">
+          <div class="stat-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>Upcoming Donation</span>
+          </div>
+        </article>
+
+        <article class="stat-card blue">
+          <div class="stat-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>Lives Helped</span>
+          </div>
+        </article>
+
+        <article class="stat-card purple">
+          <div class="stat-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <strong>A+</strong>
+            <span>Your Blood Group</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="content-grid">
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Your Donation History</h2>
+            <button class="text-btn">View All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Blood Group</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>12 Mar 2024</td>
+                  <td>A+</td>
+                  <td>City Blood Bank</td>
+                  <td><span class="badge success">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>18 Aug 2023</td>
+                  <td>A+</td>
+                  <td>Green Hospital</td>
+                  <td><span class="badge success">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>10 Jan 2023</td>
+                  <td>A+</td>
+                  <td>LifeCare Hospital</td>
+                  <td><span class="badge success">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Nearby Blood Requests</h2>
+            <button class="text-btn">View All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Blood Group</th>
+                  <th>Location</th>
+                  <th>Urgency</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Amit Sharma</td>
+                  <td>A+</td>
+                  <td>City Hospital</td>
+                  <td><span class="badge danger">Urgent</span></td>
+                </tr>
+                <tr>
+                  <td>Priya Mehta</td>
+                  <td>O-</td>
+                  <td>Care Hospital</td>
+                  <td><span class="badge warning">Soon</span></td>
+                </tr>
+                <tr>
+                  <td>Rohit Verma</td>
+                  <td>B+</td>
+                  <td>Health Centre</td>
+                  <td><span class="badge success">Normal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="quick-grid">
+
+        <button class="quick-card red-bg">
+          <i class="fa-solid fa-droplet"></i>
+          <div>
+            <b>Donate Now</b>
+            <small>Schedule your next donation</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card blue-bg">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div>
+            <b>Find Request</b>
+            <small>Help someone in need</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card green-bg">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <b>Nearby Centers</b>
+            <small>Blood banks & hospitals</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card purple-bg">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <b>My Impact</b>
+            <small>See your contribution</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================= ADMIN ================= -->
+
+    <section id="adminDashboard" class="hidden">
+
+      <div class="stats-grid">
+
+        <article class="stat-card red">
+          <div class="stat-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div>
+            <strong>1,250</strong>
+            <span>Total Donors</span>
+          </div>
+        </article>
+
+        <article class="stat-card blue">
+          <div class="stat-icon">
+            <i class="fa-solid fa-hospital"></i>
+          </div>
+          <div>
+            <strong>24</strong>
+            <span>Hospitals Connected</span>
+          </div>
+        </article>
+
+        <article class="stat-card red">
+          <div class="stat-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div>
+            <strong>320</strong>
+            <span>Units in Inventory</span>
+          </div>
+        </article>
+
+        <article class="stat-card green">
+          <div class="stat-icon">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <div>
+            <strong>18</strong>
+            <span>Active Requests</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="content-grid">
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Blood Inventory</h2>
+            <span class="mini-label">Units</span>
+          </div>
+
+          <div class="chart">
+
+            <div class="grid-line line-1"></div>
+            <div class="grid-line line-2"></div>
+            <div class="grid-line line-3"></div>
+
+            <div class="bars">
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:82%"></div>
+                <span>A+</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:32%"></div>
+                <span>A-</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:54%"></div>
+                <span>B+</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:28%"></div>
+                <span>B-</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:48%"></div>
+                <span>AB+</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:30%"></div>
+                <span>AB-</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:75%"></div>
+                <span>O+</span>
+              </div>
+
+              <div class="bar-wrap">
+                <div class="bar" style="height:43%"></div>
+                <span>O-</span>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+
+          <div class="panel-heading">
+            <h2>Recent Blood Requests</h2>
+            <button class="text-btn">View All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Blood Group</th>
+                  <th>Location</th>
+                  <th>Units</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Neha Singh</td>
+                  <td>O+</td>
+                  <td>City Hospital</td>
+                  <td>2</td>
+                  <td><span class="badge danger">Urgent</span></td>
+                </tr>
+
+                <tr>
+                  <td>Vikram Patel</td>
+                  <td>B-</td>
+                  <td>Care Hospital</td>
+                  <td>1</td>
+                  <td><span class="badge warning">In Progress</span></td>
+                </tr>
+
+                <tr>
+                  <td>Anita Sharma</td>
+                  <td>A+</td>
+                  <td>LifeCare</td>
+                  <td>3</td>
+                  <td><span class="badge success">Completed</span></td>
+                </tr>
+
+                <tr>
+                  <td>Suresh Kumar</td>
+                  <td>AB+</td>
+                  <td>Green Hospital</td>
+                  <td>1</td>
+                  <td><span class="badge purple-badge">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="quick-grid">
+
+        <button class="quick-card red-bg">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <b>Manage Donors</b>
+            <small>View and manage donors</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card blue-bg">
+          <i class="fa-solid fa-hospital"></i>
+          <div>
+            <b>Manage Hospitals</b>
+            <small>Add or update hospitals</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card green-bg">
+          <i class="fa-solid fa-droplet"></i>
+          <div>
+            <b>Update Inventory</b>
+            <small>Track blood units</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="quick-card purple-bg">
+          <i class="fa-solid fa-file-lines"></i>
+          <div>
+            <b>Generate Reports</b>
+            <small>View system reports</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script >
+    const session =
+  JSON.parse(localStorage.getItem("lifelineUser") || "null");
+
+if (!session) {
+  //window.location.replace("/dashboard");
+}
+
+const isAdmin = session && session.role === "admin";
+
+const donorMenu = [
+  ["Dashboard", "fa-house"],
+  ["Donate Blood", "fa-droplet"],
+  ["My Donations", "fa-clock-rotate-left"],
+  ["Requests", "fa-hand-holding-heart"],
+  ["Find Blood Banks", "fa-location-dot"],
+  ["Profile", "fa-user"],
+  ["Settings", "fa-gear"]
+];
+
+const adminMenu = [
+  ["Dashboard", "fa-house"],
+  ["Manage Donors", "fa-users"],
+  ["Manage Hospitals", "fa-hospital"],
+  ["Blood Requests", "fa-droplet"],
+  ["Blood Inventory", "fa-box-archive"],
+  ["Reports", "fa-file-lines"],
+  ["Users", "fa-user-group"],
+  ["Settings", "fa-gear"]
+];
+
+function renderSidebar() {
+  const nav = document.getElementById("sidebarNav");
+  const menu = isAdmin ? adminMenu : donorMenu;
+
+  nav.innerHTML = menu.map((item, index) => `
+    <button class="nav-item ${index === 0 ? "active" : ""}"
+            data-section="${item[0]}">
+      <i class="fa-solid ${item[1]}"></i>
+      <span>${item[0]}</span>
+    </button>
+  `).join("");
+
+  nav.querySelectorAll(".nav-item").forEach(button => {
+    button.addEventListener("click", () => {
+
+      nav.querySelectorAll(".nav-item")
+        .forEach(item => item.classList.remove("active"));
+
+      button.classList.add("active");
+
+      if (button.dataset.section !== "Dashboard") {
+        alert(
+          `${button.dataset.section} module is ready. ` +
+          `Connect it to your Node.js/Express backend next.`
+        );
+      }
+    });
+  });
+}
+
+function loadDashboard() {
+  document.getElementById("profileName").textContent =
+    session.name;
+
+  document.getElementById("profileRole").textContent =
+    isAdmin ? "System Administrator" : "Blood Donor";
+
+  document.getElementById("pageTitle").textContent =
+    isAdmin ? "Admin Dashboard" : "Donor Dashboard";
+
+  document.getElementById("welcomeText").textContent =
+    isAdmin
+      ? `Welcome back, ${session.name}! Manage the blood network efficiently.`
+      : `Welcome back, ${session.name}! Thank you for being a lifesaver ❤️`;
+
+  document
+    .getElementById("donorDashboard")
+    .classList
+    .toggle("hidden", isAdmin);
+
+  document
+    .getElementById("adminDashboard")
+    .classList
+    .toggle("hidden", !isAdmin);
+}
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  localStorage.removeItem("lifelineUser");
+   window.location.replace("/");
+});
+
+renderSidebar();
+loadDashboard();
+
+</script>
+
+</body>
+</html>

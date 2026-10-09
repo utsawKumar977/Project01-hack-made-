@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box">
+            <h1>🩸 Blood Donor Registration</h1>
+            <p>Become a lifesaver. Register as a blood donor today.</p>
+
+            <form action="/signup" method="POST">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" min="18" max="65" name="age" placeholder="Enter your age" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Blood Group</label>
+                    <select required name="bloodGroup">
+                        <option value="">Select Blood Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="Enter your city" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Create password" required>
+                </div>
+
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:
+linear-gradient(
+rgba(130,0,0,.70),
+rgba(90,0,0,.70)
+),
+url("https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1600");
+
+background-size:cover;
+background-position:center;
+overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+
+background-size:cover;
+background-position:center;
+overflow:hidden;
+
+}
+
+.container{
+    width:100%;
+    padding:20px;
+}
+
+.form-box{
+    max-width:450px;
+    background:#fff;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-box h1{
+    text-align:center;
+    color:#c70039;
+    margin-bottom:10px;
+}
+
+.form-box p{
+    text-align:center;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#333;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:16px;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+    border-color:#c70039;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#c70039;
+    color:white;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#900c3f;
+}
+</style>
+</html>
